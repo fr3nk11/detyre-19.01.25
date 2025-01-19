@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Field Interaction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Webpage with Input Field</h1>
+
+  <input type="text" id="inputField" placeholder="Enter something...">
+
+  <br>
+  <button onclick="logInput()">Log Input</button>
+  <button onclick="clearInput()">Clear Input</button>
+  <button onclick="disableInteractions()">Disable All Interactions</button>
+
+  <script>
+    function logInput() {
+      const input = document.getElementById('inputField').value;
+      console.log(input);
+    }
+
+    function clearInput() {
+      document.getElementById('inputField').value = '';
+    }
+
+    function disableInteractions() {
+      document.body.querySelectorAll('input, button').forEach((element) => {
+        element.disabled = true;
+      });
+    }
+  </script>
+</body>
+</html>
